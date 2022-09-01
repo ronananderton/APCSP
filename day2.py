@@ -18,4 +18,4 @@ elif not large_number and sibling:
 elif large_number and not sibling:
     print("You will end up alone")
 else:
-    print("Have you ever heard of Krunker.io?")
+    print("You should invest in NFTs")
