@@ -20,8 +20,6 @@ def end_game():
     
     for player, num_points in points.items():
         print(f"{player} has {num_points} points.")
-    
-    # max(points, key=lambda key: points[key])
 
     print(f"{max(points, key=points.get)} has won!")
 
