@@ -1,3 +1,4 @@
+
 def f_to_c(f):
     return (float(f) - 32) * 5/9
 

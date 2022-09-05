@@ -1,3 +1,4 @@
+
 hairstyles = ["bouffant", "pixie", "dreadlocks", "crew", "bowl", "bob", "mohawk", "flattop"]
 
 prices = [30, 25, 40, 20, 20 ,35, 50, 35]
