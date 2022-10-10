@@ -40,8 +40,18 @@ dayafter.append(int(input("How many minutes do you have to do homework the day a
 #FINALLY - IMPLEMENT YOUR ALGORITHM! IF YOU FINISH, THINK ABOUT HOW TO OPTIMIZE YOUR ALGORITHM! MAYBE ADD A "I DONT WANT TO" OPTION TO PUSH YOUR HOMEWORK TO THE NEXT DAY OR A "STAY UP LATE" TO FINISH A PRIORITY ASSIGNMENT
 
 
-def schedule():
-    time_inputs = {"today" : x , "tomorrow" : x , "dayafter" : x}
-    
+def schedule(input_data):
+    time_inputs = int(input(day))
+    day_totals = {"today" : x , "tomorrow" : x , "dayafter" : x}
+    assignments = {"today" : [], "tomorrow" : [] , "dayafter" : []}
+    assignment_unassigned = []
 
-    
+    for i in range(len(input_data)):
+        
+        i = len(assignment_unassigned)
+        assignment = input_data[i]
+
+        if day_totals[day] + int(assignment["Required Time"]) <= time_inputs(day):
+            assignment_unassigned.append(assignment)
+            day_totals += int(assignment["Required Time"])
+            input_data.remove(assignment)
