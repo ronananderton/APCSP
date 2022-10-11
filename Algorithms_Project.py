@@ -21,8 +21,9 @@ dayafter.append(int(input("How many minutes do you have to do homework the day a
 # ARE USING? WHAT HAPPENS WHEN YOU HAVE TOO MUCH HOMEWORK AND NOT ENOUGH MINUTES? WHAT HAPPENS WHEN YOU HAVE 
 # ENOUGH MINUTES TO COMPLETE AN ASSIGNMENT HALFWAY, BUT NOT COMPLETELY? WALK ME THROUGH AN EXAMPLE WITH A 
 # FEW ASSIGNMENTS.  
-# The goal of the algorithm is to prioritize my worktime to complete the most important assignments first.
-# The algorithm will recognize the priority value of the assignments which will dictate order. 
+# The goal of the algorithm is to prioritize my work time to complete the most important assignments first.
+# The algorithm will recognize the priority value of the assignments which will dictate order. However, if there 
+# still time in one day and a lesser priority assignment can fit, that assignment will be scheduled. 
 # NEXT WRITE YOUR ALGORITHM OUT IN PSEUDOCODE
 
 #FINALLY - IMPLEMENT YOUR ALGORITHM! IF YOU FINISH, THINK ABOUT HOW TO OPTIMIZE YOUR ALGORITHM! MAYBE ADD A "I DONT WANT TO" OPTION TO PUSH YOUR HOMEWORK TO THE NEXT DAY OR A "STAY UP LATE" TO FINISH A PRIORITY ASSIGNMENT
