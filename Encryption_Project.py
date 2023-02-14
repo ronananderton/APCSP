@@ -1,3 +1,5 @@
+#Part 1
+
 characters = [
     # lowercase characters
 'a','b','c','d','e','f','g','h','i','j','k','l','m','n','o','p','q','r','s','t','u','v','w','x','y','z',
@@ -24,33 +26,41 @@ def XOR(bit1 , bit2):
     else:
         return "1"
 
- # msg 1 0 1
- # key 0 1 1
- # enc 1 1 0
-
- # enc 1 1 0
- # key 0 1 1
- # dec 1 0 1
-
- # pos 0 1 2 3 4 5 6 7
- # msg 0 0 0 0 1 1 1 1
- # key 1 0 1 0 1 0 1 0
-
- def XORonByte(byte , key):
-    encryptedMsg = ""
-    for i in range(len(byte)):
-        encryptedMsg += XOR(byte[i] , key[i])
-    return encryptedMsg
+def XORonByte(byte , key):
+  encryptedMsg = ""
+  for i in range(len(byte)):
+    encryptedMsg += XOR(byte[i] , key[i])
+  return encryptedMsg
 
 def XORonLetter(letter , KeyLetter):
     binLetter = encode(letter)
     binKey = encode(KeyLetter)
     return decode(XORonByte(binLetter , binKey))
 
-   def XORonSentence(sentence):
-    encryptedMsg = ""
+def XORonSentence(sentence , key):
+    encryptedSentence = ""
     for i in range(len(sentence)):
         encryptedSentence += XORonLetter(sentence[i] , key[i])
+    return (encryptedSentence)
 
-print(XORonSentence("hello" , "world"))
-print(XORonSentence("rkAan" , "world"))
+print(XORonSentence("&avrvLYpjgiWtmewbSfq bl", "Beaver believers, leave"))
+print(XORonSentence("aaaaaankao  )lx@EAC@?wyz", "Never lend a penguin your gown"))
+print(XORonSentence("aaaaaaaaaaaaufdInK#uaaardd!?eeejMaynC", "Never gonna frown, and roam away, adieu"))
+
+#Part 2
+
+rule1 = ['C', 'T', 'A', 'G']
+
+def encodeDNA(character):
+  charIndex = rule1.index(character)
+  return '{0:02b}'.format(charIndex)
+
+def decodeDNA(binary):
+  charIndex = int(binary, 2)
+  return rule1[charIndex]
+
+def XOR_DNA(plainDNA, keyDNA):
+    DNA_msg = ""
+    for i in range(len(plainDNA)):
+        DNA_msg += decodeDNA(XORonByte(str(encodeDNA(plainDNA[i])), str(encodeDNA(keyDNA[i%len(keyDNA)]))))
+    return DNA_msg
