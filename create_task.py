@@ -7,8 +7,7 @@ def run_dice_game(r):
     total_points = 500
     
     while r > 0 and total_points >= 0 and total_points < 1200:
-        die_choice = input(f'''You have {total_points} points.  You have {r} roll(s) 
-        left. Choose your die. (answer 1 or 2) \n''')
+        die_choice = input(f'''You have {total_points} points.  You have {r} roll(s) left. Choose your die. (answer 1 or 2) \n''')
 
         if die_choice == "1":
             print("You chose the first die.")
